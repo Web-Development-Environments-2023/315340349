@@ -1,193 +1,252 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <script src="https://cdn.tiny.cloud/1/ph105n8sxinmuie2zz3nv7qyl1bwugezfheno22bh4ff868i/tinymce/6/tinymce.min.js"
+    referrerpolicy="origin"></script>
+
+  <script>
+
+    tinymce.init({
+      selector: "#message",
+      plugins: "emoticons",
+      toolbar: "emoticons",
+      toolbar_location: "bottom",
+      menubar: false
+    });
+
+    function addEmailToMessage() {
+      event.preventDefault();
+      tinyMCE.triggerSave();
+      const message = tinyMCE.activeEditor.getContent().replace(/<[^>]*>/g, "") + '\nthanks ' + document.getElementById('email').value;
+      const subject = document.getElementById('subject').value
+
+      document.getElementById("myForm").action = "mailto:kapustya@post.bgu.ac.il?subject=" + subject + "&body=" + encodeURIComponent(message);
+      document.getElementById("myForm").submit();
+
+      document.getElementById('email').value = "";
+      document.getElementById('subject').value = "";
+      tinymce.activeEditor.setContent('');
+    }
+
+    function stripHtml(html) {
+      let tmp = document.createElement("DIV");
+      tmp.innerHTML = html;
+      return tmp.textContent || tmp.innerText || "";
+    }
+
+  </script>
 </head>
+
 <body>
-<div id="menu">
-<li><a href="#about">About Me</a></li>
-<li><a href="#photos">My Photos</a></li>
-<li><a href="#playlist">My Playlist</a></li>
-<li><a href="#like">Like</a></li>
-<li><a href="#qrcoder">QR code</a></li>
-<li><a href="#spa">Q&A</a></li>
-<li><a href="#contact">Contact Me</a></li>
-</div>
-		  
-<section id="about" class="section">
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-about me
-<br/>
-<br/>
-<br/>
-</section>
+  <center>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v16.0"
+      nonce="NdoQqmQG"></script>
 
-<section id="photos" class="section">
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-my photos
-<br/>
-<br/>
-<br/>
-</section>
+    <div id="menu">
+      <a href="https://www.instagram.com/tzipishavitofficial/" target="_blank">
+        <img src="instegramPic.jpg" style="width: 25px; height: 25px; text-align: left; padding-top: 5px;">
+      </a>
+      <a href="#about">About Me</a>
+      <a href="#photos">My Photos</a>
+      <a href="#playlist">My Playlist</a>
+      <a href="#like">Like</a>
+      <a href="#qrcoder">QR code</a>
+      <a href="#spa">Q&A</a>
+      <a href="#contact">Contact Me</a>
 
-<section id="playlist" class="section">
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-my playlist
-<br/>
-<br/>
-<br/>
-</section>
+    </div>
 
-<section id="like" class="section">
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-give me a like
-<br/>
-<br/>
-<br/>
-</section>
 
-<section id="qrcoder" class="section">
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-scan my code
-<br/>
-<br/>
-<br/>
-</section>
+    <section id="about" class="section">
+      <br />
+      <br />
+      <br />
+      <h1>About Me</h1>
+      <p
+        style="background-color: white; size: 20px; text-align: center; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" >
+        Tzipi Shavit (Hebrew: ציפי שביט; born April 1, 1947) is an Israeli actress, comedian entertainer, who is best
+        known as a children's entertainer. She is sometimes described by the media as the "First Lady of Israeli
+        entertainment."[1]
+        <br />
+        Shavit was born in kibbutz Neve Yam, Israel. She served in the Israel Defense Forces in Tzevet Havai of the
+        Southern Command.
+        <br />
+        Shortly after that, she participated in the film Our Neighborhood. In 1969 her manager got her a part in the
+        stage
+        comedy show A Funny Thing Happened to Me On The Way To Suez written by Saul Biber The show was canceled shortly
+        thereafter due to a publicized objection by a bereaved mother who lost her son in The Sinai War. In 1971, Shavit
+        played in the stage musical Jumbo in which she sang the song "Everyone went to the Jumbo" to the tune of the
+        Italian song "Volevo un gatto nero". In 1972, Shavit acted in the stage show Chocolate Mint Gum - The Zionist
+        Congress of laughter alongside Yardena Arazi. In the Spring of 2016, performed in the play "Noah's Ark."[2] In
+        2017, she starred in the play My Mother the General (Hebrew: אמי הגנרלית) an adaptation from the 1979 film by
+        the
+        same name.[3] Shavit was a featured singer in the song and music video "Casanova (Good Aunt)" by Israeli singers
+        Eve and Lear[4] (Hebrew: איב אנד ליר).[5]
+        <br /><a href="https://en.wikipedia.org/wiki/Tzipi_Shavit">~wikipedia</a>
 
-<section id="spa" class="section">
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-ans
-<br/>
-<br/>
-<br/>
-</section>
+      </p>
+      <hr>
+    </section>
 
-<section id="contact" class="section">
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-contact me
-<br/>
-<br/>
-<br/>
-</section>
+    <section id="photos" class="section">
+      <h1>Photos</h1>
 
+      <div>
+        <img src="2.jpeg">
+        <img src="3.jpeg">
+        <img src="images (2).jpeg">
+        <img src="images (1).jpeg">
+        <img src="images (3).jpeg">
+        <img src="images (4).jpeg">
+        <img src="images.jpeg">
+        <img src="download (1).jpeg">
+        <img src="download (2).jpeg">
+      </div>
+
+      <hr>
+    </section>
+
+    <section id="playlist" class="section">
+      <br />
+      <h1>My Playlist</h1>
+      <br />
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/6T8XmAzO_xc" title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+      <br />
+      <br />
+      <hr>
+    </section>
+
+    <section id="like" class="section">
+      <br />
+      <h1>Give Me a Like</h1>
+      <iframe
+        src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2FTzipiShavitOfficial%2Fvideos%2F1108587687203960%2F&show_text=false&width=269&t=0"
+        width="269" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+        allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+        allowFullScreen="true"></iframe>
+      <br />
+      <div class="fb-like" data-href="https://fb.watch/jsdlaq3jYQ/" data-width="" data-layout="" data-action=""
+        data-size="" data-share="true"></div>
+      <br />
+      <br />
+      <hr>
+    </section>
+
+    <section id="qrcoder" class="section">
+      <br />
+      <h1>My Code</h1>
+      <br />
+      <br />
+      <br />
+      <hr>
+    </section>
+
+    <section id="spa" class="section">
+      <br />
+      <h1>Ans</h1>
+      <table>
+        <tr>
+          <th>
+            <h1 style="font-style: italic; font-size: 20px; text-decoration: underline;">web1</h1>
+          </th>
+          <th>
+            <h1 style="font-style: italic; font-size: 20px; text-decoration: underline;">web2</h1>
+          </th>
+          <th>
+            <h1 style="font-style: italic; font-size: 20px; text-decoration: underline;">web3</h1>
+          </th>
+        </tr>
+        <tr>
+          <th style="text-align: left;">The first generation of the World Wide Web, which was characterized by static web pages with basic HTML
+            formatting, limited interactivity, and a one-way flow of information from website owners to website
+            visitors. Websites were mostly informational in nature and were designed for individual consumption rather
+            than collaboration.</th>
+          <th style="text-align: left;">The second generation of the World Wide Web, which emerged in the late 1990s and early 2000s. This era of
+            the internet was marked by the rise of user-generated content, social networking, and collaboration among
+            users. Web2.0 technologies made it possible for users to interact with each other, share information, and
+            create content. Examples of Web2.0 platforms include social media sites like Facebook, Twitter, and
+            Instagram, as well as collaborative tools like wikis and blogs.</th>
+          <th style="text-align: left;">The current stage of the evolution of the internet, which is still in its early stages. It is often
+            referred to as the "Semantic Web" and is characterized by the use of artificial intelligence, blockchain
+            technology, and decentralized systems to create a more intelligent and secure web. Web3 aims to make the
+            internet more decentralized, democratized, and secure by giving users more control over their data and
+            online identities. Examples of Web3 technologies include decentralized apps (dApps), blockchain-based
+            platforms, and decentralized finance (DeFi) systems.</th>
+        </tr>
+        <tr>
+          <th style="text-align: left;">For example:
+            <ul>
+              <li>Early websites like the first version of Yahoo! and the NASA website</li>
+              <li>Static HTML pages that were primarily used to provide information to users</li>
+              <li>Limited interactivity and user participation</li>
+            </ul>
+          </th>
+          <th style="text-align: left;">For example:
+            <ul>
+              <li>Social networking sites like Facebook, Twitter, and LinkedIn</li>
+              <li>User-generated content platforms like YouTube, Wikipedia, and Reddit</li>
+              <li>Collaborative tools like Google Docs, Slack, and Trello</li>
+            </ul>
+          </th>
+          <th style="text-align: left;">For example:
+            <ul>
+              <li>Decentralized finance (DeFi) platforms like Uniswap and Aave</li>
+              <li>Decentralized apps (dApps) like CryptoKitties and Brave Browser</li>
+              <li>Blockchain-based platforms like Ethereum, Polkadot, and Cardano</li>
+            </ul>
+          </th>
+        </tr>
+      </table>
+      <br />
+      <br />
+      <br />
+      <hr>
+    </section>
+
+    <section id="contact" class="section">
+      <br />
+      <h1>Contact Me</h1>
+
+      <form id="myForm" action="mailto:kapustya@post.bgu.il" method="post">
+        <label for="email" >Email:</label>
+        <input type="email" id="email" name="email" placeholder="please enter your email">
+        <br>
+        <br>
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject">
+        <br>
+        <br>
+        <label for="messagea">Message:</label>
+        <textarea id="message" name="message" style="width: 500px;height: 300px;"></textarea>
+        <br>
+        <button type="submit" onclick="addEmailToMessage()">Send</button>
+      </form>
+      <br />
+      <br />
+      <hr>
+    </section>
+  </center>
+</body>
 
 <script type="text/javascript">
-$(function(){
-  $("#nav a").click(function(e){
-    e.preventDefault();
-    $('html,body').scrollTo(this.hash,this.hash); 
+  $(function () {
+    $("#nav a").click(function (e) {
+      e.preventDefault();
+      $('html,body').scrollTo(this.hash, this.hash);
+    });
   });
-});
 </script>
 <script type="text/javascript">
- $(document).scroll(function() {
-    $('#menu').toggle($(this).scrollTop()>1000)
- });​
- </script>
+  $(document).scroll(function () {
+    $('#menu').toggle($(this).scrollTop() > 1000)
+  });​
+</script>
 </body>
+
 </html>
